@@ -18,7 +18,7 @@ var Quotes = [{
         quote: 'Any fool can write code that a computer can understand. Good programmers write code that humans can understand',
         source: 'Martin Fowler',
         citation: 'Fowler, M. F. (2001, September 11)',
-        date: '2001',
+        year: '2001'
 
     },
     {
@@ -26,7 +26,7 @@ var Quotes = [{
         quote: 'First, solve the problem. Then, write the code',
         source: 'John Johnson',
         citation: 'Johnson, J. J. (2013, April 2)',
-        date: '2013',
+        year: '2013'
 
     },
     {
@@ -34,7 +34,7 @@ var Quotes = [{
         quote: 'Experience is the name everyone gives to their mistakes',
         source: 'Oscar Wilde',
         citation: 'Wilde, O. W. (2010, June 22)',
-        date: '2010',
+        year: '2010'
 
     },
     {
@@ -42,14 +42,14 @@ var Quotes = [{
         quote: 'In order to be irreplaceable, one must always be different',
         source: 'Coco Chanel',
         citation: 'Chanel, C. C. (2017, May 27)',
-        date: '2017',
+        year: '2017'
     },
     {
 
         quote: 'Java is to JavaScript what car is to Carpet',
         source: 'Chris Heilmann',
         citation: 'Heilmann, C. H. (2000, August 4)',
-        date: '2000',
+        year: '2000'
 
     },
     {
@@ -57,7 +57,7 @@ var Quotes = [{
         quote: 'Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday\’s code"',
         source: 'Dan Salomon',
         citation: 'Salomon, D. S. (2011, December 9)',
-        date: '2011',
+        year: '2011'
 
     },
     {
@@ -65,8 +65,8 @@ var Quotes = [{
         quote: 'Perfection is achieved not when there is nothing more to add, but rather when there is nothing more to take away',
         source: 'Antoine de Saint-Exupery',
         citation: 'Saint-Exupery, A. S. (2009, August 27)',
-        date: '2000',
-        favorite: 'This is a personal favorite Quote of mine',
+        year: '2000',
+        favorite: 'This is a personal favorite Quote of mine'
 
     },
     {
@@ -74,7 +74,7 @@ var Quotes = [{
         quote: 'Code is like humor. When you have to explain it, it’s bad',
         source: 'Cory House',
         citation: 'House, C. H. (2007, january 18)',
-        date: '2007',
+        year: '2007'
 
     },
     {
@@ -82,7 +82,7 @@ var Quotes = [{
         quote: 'Simplicity is the soul of efficiency',
         source: 'Austin Freeman',
         // citation: 'Freeman, A. F. (2002, february 20)',
-        date: '2000',
+        year: '2000'
 
     },
     {
@@ -145,22 +145,29 @@ function printQuote() {
 
     `;
 
+/**
+ * Created a if statment to see if conditions are met if the conditions are met the html template literal will concatanate(add onto) with the html varaible declaried above
+ * this will create a full string as the rest of the html code and the closeing </p> will be concatanated depending on which condition the random Quote string meets
+ * 
+ * The final code between both <p></p> tags is then displayed on the document using the document.querySelector method
+ * and is placed within the <div></div> tags in the main index.html file
+ */
 
-    if (getRandomQuote_Quote.favorite && getRandomQuote_Quote.date && getRandomQuote_Quote.citation) {
+    if (getRandomQuote_Quote.favorite == true && getRandomQuote_Quote.year == true && getRandomQuote_Quote.citation == true) {
 
-        html += `<span class = "citation"> ${getRandomQuote_Quote.citation} </span><span class = "year">${getRandomQuote_Quote.year}</span><span class = "citation">${+getRandomQuote_Quote.favorite}</span></p>`;
+        html += `<span class = "citation"> ${ getRandomQuote_Quote.citation } </span><span class = "year">${ getRandomQuote_Quote.year }</span><span class = "citation">${+getRandomQuote_Quote.favorite}</span></p>`;
 
-    } else if (getRandomQuote_Quote.citation && getRandomQuote_Quote.year) {
+    } else if (getRandomQuote_Quote.citation == true && getRandomQuote_Quote.year == true) {
 
-        html += `<span class = "citation">${getRandomQuote.citation}</span><span class = "year">${getRandomQuote.year}</span></p>`
+        html += `<span class = "citation">${ getRandomQuote.citation }</span><span class = "year">${ getRandomQuote.year }</span></p>`;
 
-    } else if (getRandomQuote_Quote.citation) {
+    } else if (getRandomQuote_Quote.citation ) {
 
-        html += `<span class = "citation">${getRandomQuote_Quote.citation}</span><span class = "year">No year was noted</span></p>`
+        html += `<span class = "citation">${ getRandomQuote_Quote.citation }</span><span class = "year">No year was noted</span></p>`;
 
-    } else if (getRandomQuote_Quote.year) {
+    } else if (getRandomQuote_Quote.year ) {
 
-        html += `<span class = "citation">No citation was noted</span><span class = "year">${getRandomQuote.year}</span>`
+        html += `<span class = "citation">No citation was noted</span><span class = "year">${ getRandomQuote.year }</span></p>`;
 
     } else {
 
@@ -173,7 +180,7 @@ function printQuote() {
 
 // A created array of colors i want the page to change to
 
-const colors = ['#EB6245', '#21D670', '#BF2ADE', '#EA3A69', '#6919E7', '#78DF51', '#C2A453', '#000000', '#47ACC2', '#D591CA']
+const colors = ['#EB6245', '#21D670', '#BF2ADE', '#EA3A69', '#6919E7', '#78DF51', '#C2A453', '#959595', '#47ACC2', '#D591CA'];
 
 /** function to define the color value used to change the color of the page
  * use a Math.random method to get a random value between 0 and the length of the array (colors) and store it in a variable
@@ -200,7 +207,9 @@ function PageColor() {
 console.log(PageColor());
 console.log(printQuote());
 
-// setInterval('window.location.reload("PrintQuote()")', 20000);
+// Page interval set to refresh every 20 seconds
+
+setInterval('window.location.reload()', 20000);
 
 /***
  * click event listener for the print quote button
