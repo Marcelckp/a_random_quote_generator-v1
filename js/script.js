@@ -15,7 +15,7 @@ project 1 - A Random Quote Generator
 
 var Quotes = [{
 
-        quote: '"Any fool can write code that a computer can understand. Good programmers write code that humans can understand"',
+        quote: 'Any fool can write code that a computer can understand. Good programmers write code that humans can understand',
         source: 'Martin Fowler',
         citation: 'Fowler, M. F. (2001, September 11).',
         year: 2001
@@ -23,7 +23,7 @@ var Quotes = [{
     },
     {
 
-        quote: '"First, solve the problem. Then, write the code"',
+        quote: 'First, solve the problem. Then, write the code',
         source: 'John Johnson',
         citation: 'Johnson, J. J. (2013, April 2). ',
         year: 2013
@@ -31,7 +31,7 @@ var Quotes = [{
     },
     {
 
-        quote: '"Experience is the name everyone gives to their mistakes"',
+        quote: 'Experience is the name everyone gives to their mistakes',
         source: 'Oscar Wilde',
         citation: 'Wilde, O. W. (2010, June 22).',
         year: 2010
@@ -39,7 +39,7 @@ var Quotes = [{
     },
     {
 
-        quote: '"In order to be irreplaceable, one must always be different"',
+        quote: 'In order to be irreplaceable, one must always be different',
         source: 'Coco Chanel',
         citation: 'Chanel, C. C. (2017, May 27).',
         year: 2017
@@ -47,7 +47,7 @@ var Quotes = [{
     },
     {
 
-        quote: '"Java is to JavaScript what car is to Carpet"',
+        quote: 'Java is to JavaScript what car is to Carpet',
         source: 'Chris Heilmann',
         citation: 'Heilmann, C. H. (2000, August 4).',
         year: 2000
@@ -55,7 +55,7 @@ var Quotes = [{
     },
     {
 
-        quote: '"Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday\’s code"',
+        quote: 'Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday\’s code"',
         source: 'Dan Salomon',
         citation: 'Salomon, D. S. (2011, December 9).',
         year: 2011
@@ -63,7 +63,7 @@ var Quotes = [{
     },
     {
 
-        quote: '"Perfection is achieved not when there is nothing more to add, but rather when there is nothing more to take away"',
+        quote: 'Perfection is achieved not when there is nothing more to add, but rather when there is nothing more to take away',
         source: 'Antoine de Saint-Exupery',
         citation: 'Saint-Expery, A. S. (2009, August 27)',
         year: 2000
@@ -71,7 +71,7 @@ var Quotes = [{
     },
     {
 
-        quote: '"Code is like humor. When you have to explain it, it’s bad"',
+        quote: 'Code is like humor. When you have to explain it, it’s bad',
         source: 'Cory House',
         citation: 'House, C. H. (2007, january 18)',
         year: 2007
@@ -79,7 +79,7 @@ var Quotes = [{
     },
     {
 
-        quote: '"Simplicity is the soul of efficiency"',
+        quote: 'Simplicity is the soul of efficiency',
         source: 'Austin Freeman',
         citation: 'Freeman, A. F. (2002, february 20)',
         year: 2000
@@ -87,7 +87,7 @@ var Quotes = [{
     },
     {
 
-        quote: '"Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live"',
+        quote: 'Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live',
         source: 'John Woods',
         citation: 'Woods, J. W. (2017, August 27)',
         year: 2006
