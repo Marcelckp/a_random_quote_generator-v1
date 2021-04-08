@@ -128,7 +128,7 @@ console.log(getRandomQuote());
  * create a variable that you will use to store the html code (template literal) to display the code (`<p class="quote">${getRandomQuote_Quote.quote}</p>`)
  * then return a document.querySelector method to display the html Quote picked at random by the getRandomQuote function to the page/HTML document
  * 
- * the html should be between the <div></div>.
+ * the html should be between the <div> </div>.
  * 
  * console.log your printQuote function to check if the Quote displays in the terminal and the to the page
  ***/
