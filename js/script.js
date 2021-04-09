@@ -125,61 +125,7 @@ function returns a random Quote object from the array of object every time it 's
 
 console.log(getRandomQuote());
 
-/**
- * `printQuote` function
- * defining the function to display the Quote on the html page
- * 
- * assign the random Quote received from the getRandomQuote() function and assign it to a variable (Any variable)
- * create a variable that you will use to store the html code (template literal) to display the code (`<p class="quote">${getRandomQuote_Quote.quote}</p>`)
- * then return a document.querySelector method to display the html Quote picked at random by the getRandomQuote function to the page/HTML document
- * 
- * the html should be between the <div> </div>.
- **/
-
-function printQuote() {
-
-    let getRandomQuote_Quote = getRandomQuote();
-    let html = ` 
-        <p class = "quote" > ${ getRandomQuote_Quote.quote } </p> 
-        <p class = "source" > ${ getRandomQuote_Quote.source }
-
-    `;
-
-/**
- * Created a if statment to see if conditions are met if the conditions are met the html template literal will concatanate(add onto) with the html varaible declaried above
- * this will create a full string as the rest of the html code and the closeing </p> will be concatanated depending on which condition the random Quote string meets
- * 
- * The final code between both <p></p> tags is then displayed on the document using the document.querySelector method
- * and is placed within the <div></div> tags in the main index.html file
- */
-
-    if (getRandomQuote_Quote.favorite == true && getRandomQuote_Quote.year == true && getRandomQuote_Quote.citation == true) {
-
-        html += `<span class = "citation"> ${ getRandomQuote_Quote.citation } </span><span class = "year">${ getRandomQuote_Quote.year }</span><span class = "citation">${+getRandomQuote_Quote.favorite}</span></p>`;
-
-    } else if (getRandomQuote_Quote.citation == true && getRandomQuote_Quote.year == true) {
-
-        html += `<span class = "citation">${ getRandomQuote.citation }</span><span class = "year">${ getRandomQuote.year }</span></p>`;
-
-    } else if (getRandomQuote_Quote.citation ) {
-
-        html += `<span class = "citation">${ getRandomQuote_Quote.citation }</span><span class = "year">No year was noted</span></p>`;
-
-    } else if (getRandomQuote_Quote.year ) {
-
-        html += `<span class = "citation">No citation was noted</span><span class = "year">${ getRandomQuote.year }</span></p>`;
-
-    } else {
-
-        html += ` <span class = "citation"> (No available reference noted) </span> <span class = "year">(No available year noted)</span> </p>`;
-    };
-
-    return document.querySelector('div').innerHTML = html;
-
-};
-
 // A created array of colors i want the page to change to
-
 const colors = ['#EB6245', '#21D670', '#BF2ADE', '#EA3A69', '#6919E7', '#78DF51', '#C2A453', '#959595', '#47ACC2', '#D591CA'];
 
 /** function to define the color value used to change the color of the page
@@ -196,7 +142,61 @@ function PageColor() {
     let Color_code = colors[Color_index];
     return document.getElementById('body').style.background = Color_code;
 
-}
+};
+
+/**
+ * `printQuote` function
+ * defining the function to display the Quote on the html page
+ * 
+ * assign the random Quote received from the getRandomQuote() function and assign it to a variable (Any variable)
+ * create a variable that you will use to store the html code (template literal) to display the code (`<p class="quote">${getRandomQuote_Quote.quote}</p>`)
+ * then return a document.querySelector method to display the html Quote picked at random by the getRandomQuote function to the page/HTML document
+ * 
+ * the html should be between the <div> </div>.
+ **/
+
+function printQuote() {
+    let Color = PageColor();
+    let getRandomQuote_Quote = getRandomQuote();
+    let html = ` 
+        <p class = "quote" > ${ getRandomQuote_Quote.quote } </p> 
+        <p class = "source" > ${ getRandomQuote_Quote.source }
+
+    `;
+
+    /**
+     * Created a if statement to see if conditions are met if the conditions are met the html template literal will concatenate(add onto) with the html varaible declaried above
+     * this will create a full string as the rest of the html code and the closing </p> will be concatenated depending on which condition the random Quote string meets
+     * 
+     * The final code between both <p></p> tags is then displayed on the document using the document.querySelector method
+     * and is placed within the <div></div> tags in the main index.html file
+     */
+
+    if (getRandomQuote_Quote.favorite == true && getRandomQuote_Quote.year == true && getRandomQuote_Quote.citation == true) {
+
+        html += `<span class = "citation"> ${ getRandomQuote_Quote.citation } </span><span class = "year">${ getRandomQuote_Quote.year }</span><span class = "citation">${+getRandomQuote_Quote.favorite}</span></p>`;
+
+    } else if (getRandomQuote_Quote.citation == true && getRandomQuote_Quote.year == true) {
+
+        html += `<span class = "citation">${ getRandomQuote.citation }</span><span class = "year">${ getRandomQuote.year }</span></p>`;
+
+    } else if (getRandomQuote_Quote.citation) {
+
+        html += `<span class = "citation">${ getRandomQuote_Quote.citation }</span><span class = "year">No year was noted</span></p>`;
+
+    } else if (getRandomQuote_Quote.year) {
+
+        html += `<span class = "citation">No citation was noted</span><span class = "year">${ getRandomQuote.year }</span></p>`;
+
+    } else {
+
+        html += ` <span class = "citation"> (No available reference noted) </span> <span class = "year">(No available year noted)</span> </p>`;
+    };
+
+    return document.querySelector('div').innerHTML = html;
+
+};
+
 
 /***
  * console.log your printQuote() function to check if the Quote displays in the terminal 
@@ -209,7 +209,7 @@ console.log(printQuote());
 
 // Page interval set to refresh every 20 seconds
 
-setInterval('window.location.reload()', 20000);
+setInterval('printQuote()', 20000);
 
 /***
  * click event listener for the print quote button
