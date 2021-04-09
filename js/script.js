@@ -160,7 +160,7 @@ function printQuote() {
     let getRandomQuote_Quote = getRandomQuote();
     let html = ` 
         <p class = "quote" > ${ getRandomQuote_Quote.quote } </p> 
-        <p class = "source" > ${ getRandomQuote_Quote.source }
+        <p class = "source" > ${ getRandomQuote_Quote.source } </p>
 
     `;
 
@@ -172,21 +172,21 @@ function printQuote() {
      * and is placed within the <div></div> tags in the main index.html file
      */
 
-    if (getRandomQuote_Quote.favorite == true && getRandomQuote_Quote.year == true && getRandomQuote_Quote.citation == true) {
+    if (getRandomQuote_Quote.citation && getRandomQuote_Quote.year) {
 
-        html += `<span class = "citation"> ${ getRandomQuote_Quote.citation } </span><span class = "year">${ getRandomQuote_Quote.year }</span><span class = "citation">${+getRandomQuote_Quote.favorite}</span></p>`;
+        html += `<span class = "citation"> ${ getRandomQuote_Quote.citation } </span><span class = "year">${ getRandomQuote_Quote.year }</span></p>`;
 
-    } else if (getRandomQuote_Quote.citation == true && getRandomQuote_Quote.year == true) {
+    } else if (getRandomQuote_Quote.citation && !getRandomQuote_Quote.year) {
 
-        html += `<span class = "citation">${ getRandomQuote.citation }</span><span class = "year">${ getRandomQuote.year }</span></p>`;
+        html += `<span class = "citation">${ getRandomQuote.citation }</span><span class = "year">No available year noted</span></p>`;
 
-    } else if (getRandomQuote_Quote.citation) {
+    } else if (!getRandomQuote_Quote.citation && getRandomQuote_Quote.year) {
 
-        html += `<span class = "citation">${ getRandomQuote_Quote.citation }</span><span class = "year">No year was noted</span></p>`;
+        html += `<span class = "citation">No available citation noted</span><span class = "citation">${+getRandomQuote_Quote.year}</span></p>`;
 
-    } else if (getRandomQuote_Quote.year) {
+    } else if (getRandomQuote_Quote.citation && getRandomQuote_Quote.year && getRandomQuote_Quote.favorite) {
 
-        html += `<span class = "citation">No citation was noted</span><span class = "year">${ getRandomQuote.year }</span></p>`;
+        html += `<span class = "citation"> ${ getRandomQuote_Quote.citation } </span><span class = "citation">${getRandomQuote_Quote.favorite}</span><span class = "year">${ getRandomQuote.year }</span></p>`;
 
     } else {
 
