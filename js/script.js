@@ -66,7 +66,7 @@ var Quotes = [{
         source: 'Antoine de Saint-Exupery',
         citation: 'Saint-Exupery, A. S. (2009, August 27)',
         year: '2000',
-        favorite: 'This is a personal favorite Quote of mine'
+        favourite: 'This quote is a personal favourite of mine.'
 
     },
     {
@@ -160,7 +160,7 @@ function printQuote() {
     let getRandomQuote_Quote = getRandomQuote();
     let html = ` 
         <p class = "quote" > ${ getRandomQuote_Quote.quote } </p> 
-        <p class = "source" > ${ getRandomQuote_Quote.source } </p>
+        <p class = "source" > ${ getRandomQuote_Quote.source } 
 
     `;
 
@@ -172,26 +172,25 @@ function printQuote() {
      * and is placed within the <div></div> tags in the main index.html file
      */
 
-    if (getRandomQuote_Quote.citation && getRandomQuote_Quote.year) {
+    if (getRandomQuote_Quote.citation) {
 
-        html += `<span class = "citation"> ${ getRandomQuote_Quote.citation } </span><span class = "year">${ getRandomQuote_Quote.year }</span></p>`;
+        html += `<span class = "citation"> ${ getRandomQuote_Quote.citation }  </span>`;
 
-    } else if (getRandomQuote_Quote.citation && !getRandomQuote_Quote.year) {
+    }
+    if (getRandomQuote_Quote.year) {
 
-        html += `<span class = "citation">${ getRandomQuote.citation }</span><span class = "year">No available year noted</span></p>`;
+        html += `<span class = "year">${getRandomQuote_Quote.year}</span>`;
 
-    } else if (!getRandomQuote_Quote.citation && getRandomQuote_Quote.year) {
+    }
+    if (getRandomQuote_Quote.favourite) {
 
-        html += `<span class = "citation">No available citation noted</span><span class = "citation">${+getRandomQuote_Quote.year}</span></p>`;
+        html += `<span class = "citation">${getRandomQuote_Quote.favourite}</span>`;
 
-    } else if (getRandomQuote_Quote.citation && getRandomQuote_Quote.year && getRandomQuote_Quote.favorite) {
+    }
 
-        html += `<span class = "citation"> ${ getRandomQuote_Quote.citation } </span><span class = "citation">${getRandomQuote_Quote.favorite}</span><span class = "year">${ getRandomQuote.year }</span></p>`;
+    // add a closing </p> tag so the html string(str) can be complete
 
-    } else {
-
-        html += ` <span class = "citation"> (No available reference noted) </span> <span class = "year">(No available year noted)</span> </p>`;
-    };
+    html += `</p>`;
 
     return document.querySelector('div').innerHTML = html;
 
